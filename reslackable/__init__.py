@@ -1,7 +1,7 @@
 import argparse
 
-from myapp.classes import reMarkable
-from myapp.views.ExampleView import ExampleView
+from reslackable.classes import reMarkable
+from reslackable.views.MessageView import MessageView
 
 
 def quit_hook(clicked):
@@ -13,7 +13,7 @@ def quit_hook(clicked):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="myapp",
+        prog="reslackable",
         description="Example carta application",
     )
     parser.add_argument(
@@ -29,7 +29,7 @@ def main():
 
     rm.eclear()
     
-    rm.update_view(ExampleView(rm))
+    rm.update_view(MessageView(rm))
     print("Updated base view")
     while True:
         clicked = rm.display()

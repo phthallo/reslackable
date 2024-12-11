@@ -1,6 +1,6 @@
-pkgnames=(my-app)
-pkgdesc="An example application package"
-url=https://example.com
+pkgnames=(reslackable)
+pkgdesc="A slack client for the Remarkable tablet."
+url=https://github.com/phthallo/reslackable
 pkgver=0.0.1-1
 timestamp=2020-10-09T18:15Z
 section=util

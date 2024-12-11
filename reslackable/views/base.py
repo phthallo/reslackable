@@ -1,7 +1,7 @@
 from carta import ReMarkable
 import fnmatch
 
-from myapp.classes import reMarkable
+from reslackable.classes import reMarkable
 
 class BaseView(object):
     def __init__(self, reMarkable: reMarkable, additional_args: dict = {}) -> None:

@@ -1,6 +1,6 @@
 {
-    "displayName": "MyApp",
-    "description": "Hello World",
+    "displayName": "Reslackable",
+    "description": "A Slack client for the Remarkable tablet.",
     "bin": "/opt/bin/myapp",
     "icon": "oxide:myapp-48",
     "splash": "oxide:splash:myapp-48",
