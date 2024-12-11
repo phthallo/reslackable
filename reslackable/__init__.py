@@ -25,7 +25,7 @@ def main():
     )
     args = parser.parse_args()
 
-    rm = reMarkable(simple=args.simple) if args.simple is not None else reMarkable()
+    rm = reMarkable(simple=args.simple, rm2fb=True) if args.simple is not None else reMarkable(rm2fb=True)
 
     rm.eclear()
     
