@@ -6,6 +6,7 @@ from reslackable.classes import reMarkable
 from reslackable.fetch_data import *
 from carta import Widget
 import importlib
+import re
 
 class ChannelView(BaseView):
     def __init__(self, reMarkable: reMarkable, additional_args: dict = {}) -> None:
@@ -19,6 +20,9 @@ class ChannelView(BaseView):
     def display(self):
         self.rm.reset()
         channels = [i for i in get_channels()["channels"] if i['is_member']]
+        channels += [
+            {"name": "meta", "id": "C0188CY57PZ"}, 
+            {"name": "neighbourhood", "id": "C01AS1YEM8A"}] # temporary channel whitelist before pagination
         channel_index = 1
         self.rm.add(
                 Widget(
@@ -39,9 +43,25 @@ class ChannelView(BaseView):
                     id=f"channel_{channel['id']}",
                     value=f"#{channel['name']}",
                     typ="button",
-                    x=0,
-                    y=channel_index*100,
-                    width=1404,
+                    x=50,
+                    y="step",
+                    width=200,
+                    height=50,
+                    fontsize="50"
+                )
+            )
+            try: 
+                topic = re.sub(':\w+?:|<.*?>', '', channel['topic']['value'])
+            except:
+                topic = "A channel in the Hack Club Slack."
+            self.rm.add(
+                Widget(
+                    id=f"channel_value_{channel['id']}",
+                    value=f"{topic}",
+                    typ="paragraph",
+                    x=600,
+                    y="step",
+                    width=800,
                     height=50,
                     fontsize="50"
                 )

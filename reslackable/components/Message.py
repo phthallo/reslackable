@@ -12,7 +12,6 @@ def render_message(self, message, index, message_history):
             raise ValueError("User is not a standard member.")
     except(ValueError):
         username = message['bot_profile']['name']
-        print(username)
 
     self.rm.add(
         Widget(
