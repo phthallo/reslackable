@@ -21,12 +21,12 @@ jobs:
       - name: Build
         uses: Eeems-Org/remarkable-nuitka-build-action@v2
         with:
-          main: myapp.py
+          main: reslackable.py
           python_version: '3.10'
       - uses: actions/upload-artifact@v4
         with:
-          name: myapp
-          path: dist/myapp.bin
+          name: reslackable
+          path: dist/reslackable.bin
           if-no-files-found: error
   package:
     name: Package
@@ -37,7 +37,7 @@ jobs:
       - uses: actions/download-artifact@v4
         id: download
         with:
-          name: myapp
+          name: reslackable
       - name: Build package
         uses: toltec-dev/build-action@v1
       - name: Save packages
@@ -71,7 +71,7 @@ jobs:
           run: |
             echo Y | toltecctl generate-opkg-conf
             opkg update
-            opkg install my-app
+            opkg install reslackable
             # Add steps here to test app
-            opkg remove my-app
+            opkg remove reslackable
           path: ${{ steps.download.outputs.download-path }}

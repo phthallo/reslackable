@@ -10,4 +10,3 @@ class reMarkable(ReMarkable):
     def update_view(self, view):
         self.view = view
         self.view.display()
-    
