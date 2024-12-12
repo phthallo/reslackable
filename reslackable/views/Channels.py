@@ -19,7 +19,6 @@ class ChannelView(BaseView):
     def display(self):
         self.rm.reset()
         channels = [i for i in get_channels()["channels"] if i['is_member']]
-        print(channels)
         channel_index = 1
         self.rm.add(
                 Widget(

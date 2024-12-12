@@ -9,8 +9,8 @@ license=MIT
 installdepends=(simple)
 
 source=(
-    myapp.bin
-    myapp.oxide
+    reslackable.bin
+    reslackable.oxide
 )
 sha256sums=(
     SKIP
@@ -18,6 +18,6 @@ sha256sums=(
 )
 
 package() {
-    install -D -m 755 -t "$pkgdir"/opt/bin/myapp "$srcdir"/myapp.bin
-    install -D -m 655 -t "$pkgdir"/opt/usr/share/applications/ "$srcdir"/myapp.oxide
+    install -D -m 755 -t "$pkgdir"/opt/bin/reslackable "$srcdir"/reslackable.bin
+    install -D -m 655 -t "$pkgdir"/opt/usr/share/applications/ "$srcdir"/reslackable.oxide
 }

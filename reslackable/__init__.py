@@ -24,15 +24,15 @@ def main():
     )
 
     parser.add_argument(
-        "--rm2fb",
-        "-r",
-        help="Flag if the program is being run on a reMarkable 2.",
+        "--simulate",
+        "-s",
+        help="Flag if the program is being run in a simulator.",
         action="store_false",
         default=True
     )
     args = parser.parse_args()
 
-    rm = reMarkable(simple=args.simple, rm2fb=args.rm2fb) if args.simple is not None else reMarkable(rm2fb=args.rm2fb)
+    rm = reMarkable(simple=args.simple, rm2fb=args.simulate) if args.simple is not None else reMarkable(rm2fb=args.simulate)
 
     rm.eclear()
     
